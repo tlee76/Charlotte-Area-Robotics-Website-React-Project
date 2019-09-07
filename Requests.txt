@@ -1,0 +1,15 @@
+Feedback from club officers for current site:
+  Like:
+    The colors
+    The Archive page
+    Sponsorship levels on Sponsors page
+    Information about the competition on the Competition tab
+    Format of pages
+    Navigation buttons at the top and bottom of the page
+  Dislikes:
+    Fonts are inconsistent
+    Mobile version looks garbage
+    No mention of club Outreach (add Outreach tab)
+    Clicking on sponsors does not go to their website
+    Multiple backgrounds
+    Clicking on officers does not go to their LinkedIn Page
