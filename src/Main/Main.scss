@@ -1,5 +1,7 @@
-.NavBarSelection {
-    padding-right: 4rem;
-    text-decoration: underline;
-    color: white;
+.NavBarSelection.MuiTab-textColorInherit {
+    font-size: 1rem;
+}
+
+.NavBar {
+    background-color: #212b31;
 }
