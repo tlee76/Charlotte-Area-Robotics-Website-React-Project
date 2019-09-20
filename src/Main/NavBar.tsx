@@ -1,37 +1,108 @@
 import React from "react";
-import { AppBar, Tabs, Tab, withStyles } from "@material-ui/core";
-import { Link } from "react-router-dom";
-import MainLogo from "../Images/CARLogoPrimary.png";
+import { AppBar, makeStyles, Theme, createStyles, Popover, SwipeableDrawer, IconButton, Typography } from "@material-ui/core";
+import { Menu } from "@material-ui/icons";
+import { Breakpoint } from "react-socks";
+import NavBarContent from "./NavBarContent";
 import "./Main.scss";
 
-//Custom Tabs component for styling
-const AntTabs = withStyles({
-    root: {
-        marginTop: "12px",
-    },
-    indicator: {
-        backgroundColor: '#B8860B',
-        height: "4px",
-    },
-})(Tabs); //<- Uses Material UI Tabs component but overrides what's above
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        appbar: {
+            zIndex: theme.zIndex.drawer + 1,
+            backgroundColor: "#212b31",
+            height: "75px",
+            position: "fixed",
+        },
+        feedback: {
+            position: "absolute",
+            right: "1rem",
+            top: "1rem",
+        },
+        feedbackSidebar: {
+            width: "fit-content",
+            alignSelf: "center",
+        },
+        paper: {
+            background: "#212b31",
+            color: "white",
+        },
+        hamburgerMenu: {
+            color: "white",
+            position: "absolute",
+            left: "2px",
+            top: "10px",
+        },
+        mobileNavBar: {
+            alignSelf: "center",
+            margin: "auto",
+        },
+    }),
+);
 
 export default function NavBar() {
-    const [value, setValue] = React.useState(1); //set index of 1 for default value which is Home tab
+    const [showFeedback, setShowFeedback] = React.useState<boolean>(false);
+    const [showSidebar, setShowSidebar] = React.useState<boolean>(false);
+    const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
 
-    const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
-        setValue(newValue);
-    };
+    const handleFeedbackClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        setAnchorEl(event.currentTarget);
+        setShowFeedback(true);
+    }
+
+    const handleFeedbackClose = () => {
+        setAnchorEl(null);
+        setShowFeedback(false);
+    }
+
+    const handleDrawerToggle = () => {
+        setShowSidebar(!showSidebar);
+    }
+
+    const classes = useStyles();
 
     return (
-        <AppBar position="static" className="NavBar" style={{ backgroundColor: "#212b31" }}>
-            <AntTabs className="TabIndicator" centered value={value} onChange={handleChange}>
-                <img src={MainLogo} width="55" height="55" alt="logo" />
-                <Tab className="NavBarSelection" label="Home" component={Link} to="/" />
-                <Tab className="NavBarSelection" label="About" component={Link} to="/about" />
-                <Tab className="NavBarSelection" label="Sponsors" component={Link} to="/sponsors" />
-                <Tab className="NavBarSelection" label="Competition" component={Link} to="/competition" />
-                <Tab className="NavBarSelection" label="Archive" component={Link} to="/archive" />
-            </AntTabs>
-        </AppBar>
+        <>
+            <Breakpoint large up>
+                <AppBar className={classes.appbar}>
+                    <NavBarContent
+                        isSidebar={false}
+                        handleFeedbackClick={handleFeedbackClick}
+                        classes={classes}
+                    />
+                </AppBar>
+            </Breakpoint>
+            <Breakpoint medium down>
+                <AppBar className={classes.appbar}>
+                    <IconButton className={classes.hamburgerMenu} onClick={handleDrawerToggle}>
+                        <Menu fontSize="large" />
+                    </IconButton>
+                    <Typography className={classes.mobileNavBar} variant="h5">
+                        Charlotte Area Robotics
+                    </Typography>
+                </AppBar>
+                <SwipeableDrawer 
+                    onOpen={() => setShowSidebar(true)} 
+                    onClose={() => setShowSidebar(false)} 
+                    open={showSidebar} 
+                    classes={{ paper: classes.paper }} 
+                    variant="persistent" 
+                    anchor="left"
+                >
+                    <NavBarContent
+                        isSidebar={true}
+                        handleFeedbackClick={handleFeedbackClick}
+                        classes={classes}
+                    />
+                </SwipeableDrawer>
+            </Breakpoint>
+            <Popover
+                anchorEl={anchorEl}
+                anchorOrigin={{ vertical: "center", horizontal: "center" }}
+                open={showFeedback}
+                onClose={handleFeedbackClose}
+            >
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeqmdcJt44fExwl5vgHrPZiYbLhaC70UGmg38OEvopaNqbISQ/viewform?embedded=true" title="Feedback" width="640px" height="765">Loading…</iframe>
+            </Popover>
+        </>
     )
 }
