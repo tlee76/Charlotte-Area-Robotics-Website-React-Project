@@ -9,7 +9,7 @@ export default function Interest(props: any) {
             Interested in joining CAR?
             <Divider className={classes.divider} />
             <EasyToSeeTooltip title="https://ninerengage.uncc.edu/organization/car-robotics">
-                <Link style={{color: "#166837"}} href="https://ninerengage.uncc.edu/organization/car-robotics">
+                <Link style={{color: "#046A38"}} target="_blank" href="https://ninerengage.uncc.edu/organization/car-robotics">
                     Visit our Niner Engage page!
                 </Link>
             </EasyToSeeTooltip>

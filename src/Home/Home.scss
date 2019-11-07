@@ -1,3 +1,5 @@
+@import "../Themes.scss";
+
 .logo {
     grid-area: logo;
     display: block;
@@ -10,7 +12,7 @@
 
 .more-text {
     grid-area: text;
-    color: #B3A369;
+    color: $school-gold;
 }
 
 .grid-container {

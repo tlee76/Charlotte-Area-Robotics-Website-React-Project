@@ -1,0 +1,56 @@
+@import "../Themes.scss";
+
+.card-group {
+    margin: 5rem auto;
+    display: grid;
+    row-gap: 20px;
+    grid-template-columns: 100px 650px 650px 100px;
+    grid-template-areas: 
+    '. . . .'
+    't t t t'
+    'w w w w'
+    '. d d .'
+    'c c c c'
+    '. . . .';
+}
+
+.card-container {
+    width: max-content;
+    margin: 0 auto;
+    display: flex;
+    grid-area: c;
+}
+
+.who-we-are-container {
+    @extend .card-container;
+    padding-top: 6rem;
+    display: block;
+}
+
+.slideshow-container {
+    min-width: 1500px;
+    display: grid;
+    row-gap: 20px;
+    grid-template-columns: 100px 650px 650px 100px;
+    grid-template-areas:
+        '. . . .'
+        'title title title title'
+        'words words words words'
+        '. divider divider .'
+        'leftArrow text content rightArrow'
+        '. . . .';
+}
+
+.slideshow-leftArrow {
+    height: 50px;
+    width: 50px;
+    align-self: center;
+    grid-area: leftArrow;
+}
+
+.slideshow-rightArrow {
+    height: 50px;
+    width: 50px;
+    align-self: center;
+    grid-area: rightArrow;
+}

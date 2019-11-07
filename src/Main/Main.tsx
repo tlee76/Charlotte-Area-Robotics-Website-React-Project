@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { createMuiTheme } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/styles";
-import { Route, BrowserRouter } from "react-router-dom";
+import { Route, BrowserRouter, Switch } from "react-router-dom";
 import { BreakpointProvider } from "react-socks";
 import Home from "../Home/Home";
 import About from "../About/About";
@@ -13,6 +13,16 @@ import NavBar from "./NavBar";
 
 const theme = createMuiTheme({
   typography: {
+    h2: {
+      fontFamily: "Inconsolata",
+      fontSize: "2.75rem",
+      fontWeight: 700,
+    },
+    h3: {
+      fontFamily: "Inconsolata",
+      fontSize: "2.5rem",
+      fontWeight: 700,
+    },
     h4: {
       fontFamily: "Inconsolata",
       fontSize: "1.75rem",
@@ -35,12 +45,15 @@ class Main extends Component {
           <BrowserRouter>
             <NavBar />
             <div className="content">
-              <Route exact path="/" component={Home} />
-              <Route path="/about" component={About} />
-              <Route path="/outreach" component={Outreach} />
-              <Route path="/sponsors" component={Sponsors} />
-              <Route path="/competition" component={Competition} />
-              <Route path="/archive" component={Archive} />
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/about" component={About} />
+                <Route path="/outreach" component={Outreach} />
+                <Route path="/sponsors" component={Sponsors} />
+                <Route path="/competition" component={Competition} />
+                <Route path="/archive" component={Archive} />
+                <Route component={Home} />
+              </Switch>
             </div>
           </BrowserRouter>
         </BreakpointProvider>

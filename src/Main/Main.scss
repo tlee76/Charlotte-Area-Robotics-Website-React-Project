@@ -1,3 +1,5 @@
+@import "../Themes.scss";
+
 .NavBarSelection.MuiTab-textColorInherit {
     font-size: 1.5rem;
     font-family: Inconsolata;
@@ -5,14 +7,14 @@
 }
 
 .NavBarSelection.Mui-selected {
-    color: #B3A369;
+    color: $school-gold;
 }
 
 .footer {
     text-align: center;
     padding-top: 1rem;
-    background-color: #212b31;
-    color: #B3A369;
+    background-color: $dark-blue;
+    color: $school-gold;
     position: static;
     bottom: 0;
     width: 100%;

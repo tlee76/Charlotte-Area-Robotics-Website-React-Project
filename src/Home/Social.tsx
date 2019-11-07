@@ -12,12 +12,12 @@ export default function Social(props: any) {
             </Typography>
             <Divider className={classes.divider} />
             <EasyToSeeTooltip title="https://www.instagram.com/car_robotics/">
-                <IconButton href="https://www.instagram.com/car_robotics/">
+                <IconButton href="https://www.instagram.com/car_robotics/" target="_blank">
                     <Instagram fontSize="large" color="action" />
                 </IconButton>
             </EasyToSeeTooltip>
             <EasyToSeeTooltip title="https://www.facebook.com/CharlotteAreaRobotics/">
-                <IconButton href="https://www.facebook.com/CharlotteAreaRobotics/">
+                <IconButton href="https://www.facebook.com/CharlotteAreaRobotics/" target="_blank">
                     <Facebook fontSize="large" color="action" />
                 </IconButton>
             </EasyToSeeTooltip>
