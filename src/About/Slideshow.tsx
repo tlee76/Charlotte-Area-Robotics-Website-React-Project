@@ -33,7 +33,7 @@ export default function Slideshow(props: any) {
                 <Typography align="center" variant="h2" style={{ gridArea: "title", color: "#B3A369" }}  >
                     Who We Are
                 </Typography>
-                <Typography align="center" variant="h4" style={{ gridArea: "words", color: "#B3A369" }}  >
+                <Typography align="center" variant="h5" style={{ gridArea: "words", color: "#B3A369" }}  >
                     - Mechanical Engineering | Electrical Engineering | Computer Engineering | Computer Science -
                 </Typography>
 

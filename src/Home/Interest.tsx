@@ -1,18 +1,21 @@
 import React from "react";
-import { Typography, Divider, Link } from "@material-ui/core";
+import { Typography, Link } from "@material-ui/core";
 import EasyToSeeTooltip from "../Main/EasyToSeeTooltip";
+import "./Home.scss";
 
 export default function Interest(props: any) {
-    const { classes } = props;
+    const { CardDivider } = props;
     return (
-        <Typography variant="h4">
-            Interested in joining CAR?
-            <Divider className={classes.divider} />
-            <EasyToSeeTooltip title="https://ninerengage.uncc.edu/organization/car-robotics">
-                <Link style={{color: "#046A38"}} target="_blank" href="https://ninerengage.uncc.edu/organization/car-robotics">
-                    Visit our Niner Engage page!
-                </Link>
-            </EasyToSeeTooltip>
-        </Typography>
+        <div className="side-content">
+            <Typography variant="h4">
+                Interested in joining CAR?
+                <CardDivider/>
+                <EasyToSeeTooltip title="https://ninerengage.uncc.edu/organization/car-robotics">
+                    <Link style={{color: "#1E9635"}} target="_blank" href="https://ninerengage.uncc.edu/organization/car-robotics">
+                        Visit our Niner Engage page!
+                    </Link>
+                </EasyToSeeTooltip>
+            </Typography>
+        </div>
     );
 }

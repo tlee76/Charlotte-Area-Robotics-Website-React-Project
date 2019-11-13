@@ -2,7 +2,6 @@ import React from "react";
 import { Tabs, Tab, IconButton, withStyles } from "@material-ui/core";
 import { Feedback } from "@material-ui/icons";
 import { Link } from "react-router-dom";
-import MainLogo from "../Images/CARLogoPrimary.png";
 import EasyToSeeTooltip from "./EasyToSeeTooltip";
 
 interface NavBarContentProps {
@@ -24,12 +23,12 @@ const NavTabs = withStyles({
 
 const getTabWithPath = () => {
     const path = window.location.pathname;
-    if (path === "/about") return 2;
-    if (path === "/sponsors") return 3;
-    if (path === "/competition") return 4;
-    if (path === "/outreach") return 5;
-    if (path === "/archive") return 6;
-    return 1;
+    if (path === "/about") return 1;
+    if (path === "/sponsors") return 2;
+    if (path === "/competition") return 3;
+    if (path === "/outreach") return 4;
+    if (path === "/archive") return 5;
+    return 0;
 }
 
 export default function NavBarContent(props: NavBarContentProps) {
@@ -43,7 +42,6 @@ export default function NavBarContent(props: NavBarContentProps) {
     return (
         <>
             <NavTabs orientation={isSidebar ? "vertical" : "horizontal"} scrollButtons="auto" variant="scrollable" value={value} onChange={handleChange}>
-                <img style={{ alignSelf: "center" }} src={MainLogo} width={!isSidebar ? "70" : "130"} height={!isSidebar ? "70" : "130"} alt="logo" />
                 <Tab className="NavBarSelection" label="Home" component={Link} to="/" />
                 <Tab className="NavBarSelection" label="About" component={Link} to="/about" />
                 <Tab className="NavBarSelection" label="Sponsors" component={Link} to="/sponsors" />

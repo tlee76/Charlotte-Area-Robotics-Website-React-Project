@@ -5,7 +5,7 @@ import { Email } from "@material-ui/icons";
 
 export default function Footer() {
     return (
-        <Typography variant="h4" className="footer">
+        <Typography variant="h5" className="footer">
             <Link color="inherit" style={{ textDecoration: "none" }} href="mailto:car-robotics@uncc.edu">
                 Contact {<Email className="icon" fontSize="large" />} : car-robotics@uncc.edu
             </Link>

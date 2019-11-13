@@ -10,13 +10,12 @@ const useStyles = makeStyles((theme: Theme) =>
         appbar: {
             zIndex: theme.zIndex.drawer + 1,
             backgroundColor: "#212b31",
-            height: "75px",
+            height: "max-content",
             position: "fixed",
         },
         feedback: {
             position: "absolute",
             right: "1rem",
-            top: "1rem",
         },
         feedbackSidebar: {
             width: "fit-content",
@@ -30,7 +29,7 @@ const useStyles = makeStyles((theme: Theme) =>
             color: "white",
             position: "absolute",
             left: "2px",
-            top: "10px",
+            paddingTop: "2px",
         },
         mobileNavBar: {
             alignSelf: "center",
@@ -76,16 +75,16 @@ export default function NavBar() {
                     <IconButton className={classes.hamburgerMenu} onClick={handleDrawerToggle}>
                         <Menu fontSize="large" />
                     </IconButton>
-                    <Typography className={classes.mobileNavBar} variant="h5">
+                    <Typography className={classes.mobileNavBar} variant="h6">
                         Charlotte Area Robotics
                     </Typography>
                 </AppBar>
-                <SwipeableDrawer 
-                    onOpen={() => setShowSidebar(true)} 
-                    onClose={() => setShowSidebar(false)} 
-                    open={showSidebar} 
-                    classes={{ paper: classes.paper }} 
-                    variant="persistent" 
+                <SwipeableDrawer
+                    onOpen={() => setShowSidebar(true)}
+                    onClose={() => setShowSidebar(false)}
+                    open={showSidebar}
+                    classes={{ paper: classes.paper }}
+                    variant="persistent"
                     anchor="left"
                 >
                     <NavBarContent

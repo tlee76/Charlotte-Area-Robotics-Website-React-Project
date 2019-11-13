@@ -35,7 +35,7 @@ class About extends Component {
                         <Typography style={{ color: "#B3A369", gridArea: "t" }} variant="h2" align="center">
                             Officers
                         </Typography>
-                        <Typography style={{ color: "#B3A369", gridArea: "w" }} variant="h4" align="center">
+                        <Typography style={{ color: "#B3A369", gridArea: "w" }} variant="h5" align="center">
                             - Our officers help run the club so that members only need to worry about working on the robot -
                         </Typography>
                         <Divider style={{ backgroundColor: "#B3A369", gridArea: "d" }} variant="middle" />
@@ -76,7 +76,7 @@ class About extends Component {
                         <Typography style={{ color: "#B3A369", gridArea: "t" }} variant="h2" align="center">
                             Web Team
                         </Typography>
-                        <Typography style={{ color: "#B3A369", gridArea: "w" }} variant="h4" align="center">
+                        <Typography style={{ color: "#B3A369", gridArea: "w" }} variant="h5" align="center">
                             - Our web team works diligently to provide a stunning website to showcase the club -
                         </Typography>
                         <Divider style={{ backgroundColor: "#B3A369", gridArea: "d" }} variant="middle" />
