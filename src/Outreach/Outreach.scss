@@ -1,0 +1,62 @@
+//Main Grid CSS 
+.outReach-container {
+    background-image: url("../Images/UNCCCrown.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    display: grid;
+    max-width: 85rem;
+    grid-gap: 10px;
+    grid-template-areas:
+        'banner banner banner'
+        'leftCard . rightCard'
+        'bottomTxt bottomTxt bottomTxt';
+}
+
+//Main Grid Setup (Mobile Version)
+.outReach-container-mobile {
+    background-image: url("../Images/UNCCCrown.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    row-gap: 2rem; 
+    display: grid;
+    grid-template-areas:
+        'banner banner banner'
+        'bottomTxt bottomTxt bottomTxt'
+        '. leftCard .'
+        '. rightCard .'
+        '. . .';
+}
+
+//Banner Image Styling
+.banner {
+    grid-area: banner;
+    display: block;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 95%;
+    height: 30rem;
+    opacity: .95;
+    margin: 80px auto auto auto;
+    border-radius: 20rem;
+    background-color: #B3A369;
+}
+
+//leftCard Styling
+.leftCard {
+    margin: auto 10px auto auto;
+}
+
+//rightCard Styling
+.rightCard {
+    margin: auto auto auto 10px;
+}
+
+.more-text {
+    grid-area: text;
+    color: #B3A369;
+}
