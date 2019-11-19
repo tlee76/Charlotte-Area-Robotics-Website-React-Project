@@ -50,7 +50,7 @@ function Outreach() {
 
             {/* Banner Image */}
             <img src={banner} className="banner" alt="Banner" />
-            <Paper className={classes.bottomCard} elevation={25} style={{ marginLeft: card_margin, marginRight: card_margin }}>
+            <Paper className={classes.bottomCard} elevation={25} style={{ marginTop: "2rem" }}>
                 <Typography align="center" className="more-text" variant="h4">
                     We enjoy helping and reaching out to our community. Volunteering is very important to us
                     and we strive to make our community better every chance we get.

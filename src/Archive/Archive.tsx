@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import './Archive.scss';
 import AdvancedGridList from './ImageGrid';
-import { Link } from 'react-router-dom';
-import { Typography } from "@material-ui/core";
+import { Typography, Link } from "@material-ui/core";
 
 
 class Archive extends Component {
@@ -22,7 +21,7 @@ class Archive extends Component {
                             allowFullScreen
                         />
                     </div>
-                    <Typography variant='h3' id="checkoutMore">Watch more videos on <Link to="https://www.youtube.com/results?search_query=Charlotte+Area+Robotics+" target="_blank">YouTube </Link>
+                    <Typography variant='h3' id="checkoutMore">Watch more videos on <Link style={{ color: "#046A38" }} href="https://www.youtube.com/results?search_query=Charlotte+Area+Robotics+" target="_blank">YouTube </Link>
                     </Typography>
                 </div>
                 <div id="photoSection">
