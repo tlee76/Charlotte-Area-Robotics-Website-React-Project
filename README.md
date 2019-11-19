@@ -6,8 +6,11 @@ A website for Charlotte Area Robotics built using REACT, TypeScript, and Sass.
 ## Group Members
 
   Matt Wells
+  
   Ashley Harmon
+  
   Pedro Millan
+  
   Teng Lee
   
 ## About the Project
