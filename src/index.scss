@@ -10,6 +10,20 @@ body {
   background-image: linear-gradient(to right, $background-green, #0d3830, $background-green );
 }
 
+::-webkit-scrollbar {
+	width: 5px;
+  background-color: $dark-blue;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: $school-gold;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

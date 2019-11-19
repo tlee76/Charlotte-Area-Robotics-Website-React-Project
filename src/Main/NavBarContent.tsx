@@ -6,7 +6,7 @@ import EasyToSeeTooltip from "./EasyToSeeTooltip";
 
 interface NavBarContentProps {
     handleFeedbackClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void,
-    classes: Record<"appbar" | "feedback" | "feedbackSidebar", string>,
+    classes: Record<"appbar" | "feedbackSidebar", string>,
     isSidebar: boolean,
 }
 
@@ -41,19 +41,21 @@ export default function NavBarContent(props: NavBarContentProps) {
 
     return (
         <>
-            <NavTabs orientation={isSidebar ? "vertical" : "horizontal"} scrollButtons="auto" variant="scrollable" value={value} onChange={handleChange}>
-                <Tab className="NavBarSelection" label="Home" component={Link} to="/" />
-                <Tab className="NavBarSelection" label="About" component={Link} to="/about" />
-                <Tab className="NavBarSelection" label="Sponsors" component={Link} to="/sponsors" />
-                <Tab className="NavBarSelection" label="Competition" component={Link} to="/competition" />
-                <Tab className="NavBarSelection" label="Outreach" component={Link} to="/outreach" />
-                <Tab className="NavBarSelection" label="Archive" component={Link} to="/archive" />
-            </NavTabs>
-            <EasyToSeeTooltip title="Feedback Button">
-                <IconButton onClick={handleFeedbackClick} className={isSidebar ? classes.feedbackSidebar : classes.feedback}>
-                    <Feedback style={{ color: "white" }} color="action" />
-                </IconButton>
-            </EasyToSeeTooltip>
+            <div style={{display: isSidebar ? "" : "inline-flex"}}>
+                <NavTabs orientation={isSidebar ? "vertical" : "horizontal"} scrollButtons="auto" variant="scrollable" value={value} onChange={handleChange}>
+                    <Tab className="NavBarSelection" disableFocusRipple label="Home" component={Link} to="/" />
+                    <Tab className="NavBarSelection" disableFocusRipple label="About" component={Link} to="/about" />
+                    <Tab className="NavBarSelection" disableFocusRipple label="Sponsors" component={Link} to="/sponsors" />
+                    <Tab className="NavBarSelection" disableFocusRipple label="Competition" component={Link} to="/competition" />
+                    <Tab className="NavBarSelection" disableFocusRipple label="Outreach" component={Link} to="/outreach" />
+                    <Tab className="NavBarSelection" disableFocusRipple label="Archive" component={Link} to="/archive" />
+                </NavTabs>
+                <EasyToSeeTooltip title="Feedback Button">
+                    <IconButton onClick={handleFeedbackClick} className={isSidebar ? classes.feedbackSidebar : ""}>
+                        <Feedback style={{ color: "white" }} color="action" />
+                    </IconButton>
+                </EasyToSeeTooltip>
+            </div>
         </>
     )
 }

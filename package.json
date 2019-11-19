@@ -11,6 +11,7 @@
     "@types/react-dom": "16.9.0",
     "@types/react-router": "^5.0.3",
     "@types/react-router-dom": "^4.3.5",
+    "material-ui-image": "^3.2.2",
     "node-sass": "^4.12.0",
     "object-assign": "^4.1.1",
     "react": "^16.10.1",

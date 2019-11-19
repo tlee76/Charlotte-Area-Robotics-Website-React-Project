@@ -1,7 +1,41 @@
 @import "../Themes.scss";
 
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    20% {
+        opacity: 0.10;
+    }
+
+    20% {
+        opacity: 0.20;
+    }
+
+    30% {
+        opacity: 0.30;
+    }
+
+    40% {
+        opacity: 0.40;
+    }
+  
+    50% {
+      opacity: 0.5;
+    }
+
+    75% {
+        opacity: 0.75;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+}
+
 .card-group {
-    margin: 5rem auto;
+    margin: 2rem auto;
     display: grid;
     row-gap: 20px;
     grid-template-columns: 100px 650px 650px 100px;
@@ -23,14 +57,14 @@
 
 .who-we-are-container {
     @extend .card-container;
-    padding-top: 6rem;
+    padding-top: 5rem;
     display: block;
 }
 
 .slideshow-container {
     min-width: 1500px;
     display: grid;
-    row-gap: 20px;
+    grid-row-gap: 15px;
     grid-template-columns: 100px 650px 650px 100px;
     grid-template-areas:
         '. . . .'
@@ -45,12 +79,18 @@
     height: 50px;
     width: 50px;
     align-self: center;
-    grid-area: leftArrow;
+    grid-row-start: title;
+    grid-row-end: leftArrow;
+    grid-column-start: leftArrow;
+    grid-column-end: leftArrow;
 }
 
 .slideshow-rightArrow {
     height: 50px;
     width: 50px;
     align-self: center;
-    grid-area: rightArrow;
+    grid-row-start: title;
+    grid-row-end: rightArrow;
+    grid-column-start: rightArrow;
+    grid-column-end: rightArrow;
 }

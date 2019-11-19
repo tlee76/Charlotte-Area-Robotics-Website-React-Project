@@ -23,6 +23,7 @@ export default function Slideshow(props: any) {
     const AboutBackground = withStyles({
         root: {
             backgroundColor: "#212B31",
+            borderRadius: "1rem",
         },
     })(Paper);
 
@@ -34,7 +35,7 @@ export default function Slideshow(props: any) {
                     Who We Are
                 </Typography>
                 <Typography align="center" variant="h5" style={{ gridArea: "words", color: "#B3A369" }}  >
-                    - Mechanical Engineering | Electrical Engineering | Computer Engineering | Computer Science -
+                    Mechanical Engineering | Electrical Engineering | Computer Engineering | Computer Science
                 </Typography>
 
                 <Divider style={{ gridArea: "divider", backgroundColor: "#B3A369" }} />

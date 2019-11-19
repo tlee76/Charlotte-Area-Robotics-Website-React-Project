@@ -13,10 +13,6 @@ const useStyles = makeStyles((theme: Theme) =>
             height: "max-content",
             position: "fixed",
         },
-        feedback: {
-            position: "absolute",
-            right: "1rem",
-        },
         feedbackSidebar: {
             width: "fit-content",
             alignSelf: "center",

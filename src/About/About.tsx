@@ -19,6 +19,7 @@ const AboutBackground = withStyles({
     root: {
         backgroundColor: "#212B31",
         width: "max-content",
+        borderRadius: "1rem",
     },
 })(Paper);
 
@@ -36,7 +37,7 @@ class About extends Component {
                             Officers
                         </Typography>
                         <Typography style={{ color: "#B3A369", gridArea: "w" }} variant="h5" align="center">
-                            - Our officers help run the club so that members only need to worry about working on the robot -
+                            Our officers help run the club so that members only need to worry about working on the robot
                         </Typography>
                         <Divider style={{ backgroundColor: "#B3A369", gridArea: "d" }} variant="middle" />
                         <div className="card-container">
@@ -77,7 +78,7 @@ class About extends Component {
                             Web Team
                         </Typography>
                         <Typography style={{ color: "#B3A369", gridArea: "w" }} variant="h5" align="center">
-                            - Our web team works diligently to provide a stunning website to showcase the club -
+                            Our web team works diligently to provide a stunning website to showcase the club
                         </Typography>
                         <Divider style={{ backgroundColor: "#B3A369", gridArea: "d" }} variant="middle" />
                         <div className="card-container">
@@ -104,6 +105,12 @@ class About extends Component {
                                 name="Teng Lee"
                                 officer={Officer.Developer}
                                 linkedIn="https://www.linkedin.com/in/teng-lee-5323a0162/"
+                            />
+                            <OfficerCard
+                                image={President}
+                                name="Aaron Yow"
+                                officer={Officer.Developer}
+                                linkedIn="https://www.linkedin.com/in/aaron-yow-6847a6170"
                             />
                         </div>
                     </AboutBackground>

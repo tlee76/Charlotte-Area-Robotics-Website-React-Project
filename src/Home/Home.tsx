@@ -1,5 +1,6 @@
 import React from "react";
 import { Typography, Card, Paper, makeStyles, withStyles, createStyles, Theme, Divider, Grid } from "@material-ui/core";
+import Image from "material-ui-image";
 import { useCurrentWidth } from "react-socks";
 import {DocumentTitle} from "../Main/DocumentTitle";
 import logo from "../Images/CARLogoPrimary.png";
@@ -18,7 +19,6 @@ const SideCard = withStyles({
         margin: "auto",
         textAlign: "center",
         borderRadius: "1rem",
-        height: "12rem",
         maxWidth: "max-content",
     },
 })(Card);
@@ -34,11 +34,12 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         missionCard: {
             maxWidth: "50rem",
-            display: "flex",
+            display: "inline-table",
             backgroundColor: "#212b31",
-            padding: "10px",
+            padding: "2rem",
             margin: "auto",
             verticalAlign: "middle",
+            borderRadius: "1rem",
         },
         divider: {
             margin: "2rem",
@@ -49,19 +50,36 @@ const useStyles = makeStyles((theme: Theme) =>
 function Home() {
     const width = useCurrentWidth();
     const classes = useStyles();
-    // const max_width = width > 1000 ? "15rem" : "";
-    const card_margin = width > 1000 ? "" : "10px";
+    const extras_display = width > 1000 ? "inline-flex" : "grid";
+    const extras_height = width > 1000 ? "12rem" : "40rem";
 
     DocumentTitle({title: "Home"});
 
     return (
         <>
             <div className="electrical">
-                <img src={logo} className="logo" alt="Logo" />
+                <Image 
+                    src={logo} 
+                    style={{
+                        backgroundColor: "transparent",
+                        paddingTop: "0",
+                    }}
+                    imageStyle={{
+                        position: "relative",
+                        display: "block",
+                        maxHeight: "40%",
+                        maxWidth: "40%",
+                        margin: "2rem auto",
+                    }} 
+                />
             </div>
             <div className="mechanical">
-                <Paper className={classes.missionCard} elevation={24} style={{marginLeft: card_margin, marginRight: card_margin}}>
-                    <Typography align="center" className="more-text" variant="h3">
+                <Paper className={classes.missionCard} elevation={24}>
+                    <Typography variant="h3" className="more-text" align="center">
+                        The Club's Mission
+                    </Typography>
+                    <CardDivider/>
+                    <Typography align="center" className="more-text" variant="h4">
                         Our mission is to educate and to learn about all aspects of mobile robotics.
                         From the novice to the experienced, we welcome all students who are excited
                         to learn more about the field of robotics and apply the concepts they learn
@@ -72,11 +90,11 @@ function Home() {
             <div className="computer">
                 <Grid container justify="space-evenly" alignItems="center" style={{height: "100%"}}>
                     <Grid item>
-                        <SideCard elevation={24} >
+                        <SideCard elevation={24} style={{display: extras_display, height: extras_height}} >
                             <Social CardDivider={CardDivider}/>
-                            <Divider style={{margin: "auto 10px", backgroundColor: "#B3A369"}} orientation="vertical"/>
+                            {width > 1000 && <Divider style={{margin: "auto 10px", backgroundColor: "#B3A369"}} orientation="vertical"/>}
                             <Interest CardDivider={CardDivider}/>
-                            <Divider style={{margin: "auto 10px", backgroundColor: "#B3A369"}} orientation="vertical"/>
+                            {width > 1000 && <Divider style={{margin: "auto 10px", backgroundColor: "#B3A369"}} orientation="vertical"/>}
                             <PayPal CardDivider={CardDivider}/>
                         </SideCard>
                     </Grid>
