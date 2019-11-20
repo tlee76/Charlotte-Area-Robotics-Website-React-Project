@@ -19,7 +19,7 @@ Charlotte Area Robotics (an UNCC Student Organization) was in need of a website,
 
 The website can be found [here](http://car-robotics.s3-website.us-east-2.amazonaws.com).
 
-The website is being hosted on Amazon S3 as a static website. The domain was graciously provided by UNCC.
+The website is being hosted on Amazon S3 as a static website.
 
 For questions about this project, feel free to reach out to Matt.
   
