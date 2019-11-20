@@ -17,7 +17,7 @@ A website for Charlotte Area Robotics built using REACT, TypeScript, and Sass.
 
 Charlotte Area Robotics (an UNCC Student Organization) was in need of a website, and a group of students were in need of a semester project. The two groups joined forces where CAR would be rewarded with a brand new, from scratch, beautiful website and the group of students would walk away with an introductory understanding of a modern, very popular interface development framework.
 
-The website can be found [here](car-robotics.uncc.edu) at the UNCC domain, or [here](http://car-robotics.s3-website.us-east-2.amazonaws.com/) for the hosted location.
+The website can be found [here](http://car-robotics.s3-website.us-east-2.amazonaws.com).
 
 The website is being hosted on Amazon S3 as a static website. The domain was graciously provided by UNCC.
 
